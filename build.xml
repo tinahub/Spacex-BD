@@ -69,29 +69,18 @@
 
     -->
 	
-	<property name="libs.CopyLibs.classpath" value="tools/ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
-	<property name="j2ee.server.home" value="tools/ant" />   
+    <property name="libs.CopyLibs.classpath" value="tools/ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <property name="j2ee.server.home" value="tools/ant" />   
 
     <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask"/>
     <taskdef name="start" classname="org.apache.catalina.ant.StartTask"/>
     <taskdef name="stop" classname="org.apache.catalina.ant.StopTask"/>
     <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask"/>
 
-    <target name="desplegar" depends="-preparar-produccion, dist">
-        <deploy url="http://172.16.205.191/manager/text" 
+    <target name="desplegar">
+        <deploy url="http://172.16.205.129/manager/text" 
                 username="admin" password="admin" 
-                path="/Spacex-BD" war="./dist/Spacex-BD.war" 
+                path="/SpaceX-BD" war="./dist/SpaceX-BD.war" 
                 update="true"/>
-    </target>
-    
-    <target name="-preparar-produccion" depends="">
-        <property name="-enable-produccion" value="true"></property>
-    </target>
-
-    <target name="-pre-dist" depends="-base-datos-produccion"></target>
-    
-    <target name="-base-datos-produccion" if="-enable-produccion">
-        <delete file="./web/META-INF/context.xml"></delete>
-        <move file="./web/META-INF/context_produccion.xml" tofile="./web/META-INF/context.xml"></move>
     </target>
 </project>
