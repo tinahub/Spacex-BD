@@ -78,7 +78,7 @@
     <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask"/>
 
     <target name="desplegar">
-        <deploy url="http://172.16.205.129/manager/text" 
+        <deploy url="http://172.16.205.191/manager/text" 
                 username="admin" password="admin" 
                 path="/SpaceX-BD" war="./dist/SpaceX-BD.war" 
                 update="true"/>
