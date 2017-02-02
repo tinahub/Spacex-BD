@@ -5,9 +5,9 @@
     auth="Container"
     name="jdbc/spacex"
     driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql:/172.16.205.144:3306/spacex"
+    url="jdbc:mysql:/172.16.205.191:3306/spacex"
     username="root"
-    password="admin"
+    password="root"
     
     maxTotal="100"
     maxIdle="30"
