@@ -34,7 +34,7 @@
                 Statement statement = connection.createStatement();
                 ResultSet rs = statement.executeQuery("SELECT * FROM cohete");
                 rs.next();
-                resultado = rs.getString("Nombre");
+                resultado = rs.getString("nombre");
           
             } catch(SQLException e){
                 throw new RuntimeException(e);
